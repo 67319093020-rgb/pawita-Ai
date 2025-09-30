@@ -119,5 +119,11 @@ def status():
     })
 # --------------------------------------------
 
+
 if __name__ == "__main__":
-    app.run(host="10.15.2.16", port=5000, debug=True)
+    port = int(os.environ.get("PORT", 5000))  # ใช้ PORT จาก env ของ Render
+    app.run(host="0.0.0.0", port=port, debug=False)
+
+
+# if __name__ == "__main__":
+#     app.run(host="10.15.2.16", port=5000, debug=True)
